@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 })
 const subscribers = new Set();
 
-const webhookURL = 'https://test-tau-hazel-54.vercel.app/'; // Replace with your actual HTTPS webhook URL
+const webhookURL = 'https://telegram-qoute-bot-api.vercel.app'; // Replace with your actual HTTPS webhook URL
 
 // Setting up the webhook
 bot.setWebHook(`${webhookURL}/webhook`).then(() => {

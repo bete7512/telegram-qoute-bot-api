@@ -8,7 +8,11 @@ const bot = new TelegramBot(botToken);
 
 const app = express();
 app.use(bodyParser.json());
-
+app.get('/',(req,res)=>{
+    res.json({
+        confirm:'Congratulations'
+    })
+})
 const subscribers = new Set();
 
 const webhookURL = 'https://37fe-196-191-60-108.ngrok.io'; // Replace with your actual HTTPS webhook URL
@@ -52,6 +56,7 @@ bot.onText(/\/quote/, (msg) => {
 
 // Webhook route to receive updates from Telegram
 app.post('/webhook', (req, res) => {
+    console.log(req.body);
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
